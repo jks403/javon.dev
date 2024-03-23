@@ -9,6 +9,7 @@ http.createServer(function (req, res) {
 console.log("server started on port 3000");
 
 
+<<<<<<< HEAD
 /** Begin Websocket */
 
 const webSocketServer = require('ws').Server;
@@ -38,5 +39,11 @@ wss.broadcast = function broadcast(data) {
 		client.send(data);
 	});
 }
+=======
+
+
+
+
+>>>>>>> 3a7f8e1c130434a171b969dc0d3439b44efbcd97
 
 
