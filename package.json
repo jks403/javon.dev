@@ -7,13 +7,10 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-<<<<<<< HEAD
   "license": "ISC",
   "dependencies": {
     "express": "^4.19.1",
+    "sqlite3": "^5.1.7",
     "ws": "^8.16.0"
   }
-=======
-  "license": "ISC"
->>>>>>> 3a7f8e1c130434a171b969dc0d3439b44efbcd97
 }
