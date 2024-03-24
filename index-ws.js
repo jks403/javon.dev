@@ -82,5 +82,4 @@ function shutdownDB()  {
         getCounts();
         console.log('Shutting down db');
         db.close();
-
 }
