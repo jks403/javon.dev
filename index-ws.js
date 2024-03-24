@@ -24,13 +24,17 @@ wss.on('connection', function connection(ws)  {
 
     wss.broadcast(`Current visitors: ${numClients}`);
 
-    if(ws.readyState ===ws.OPEN) {
+    if(ws.readyState === ws.OPEN) {
         ws.send('Welcome to my server');
     }
 
     db.run(`INSERT INTO visitors(count, time ) 
-        VALUES(${numClients} datetime ('now'))
+        
+	   VALUES(${numClients} datetime ('now'))
         `);
+
+
+
 
     ws.on('close', function close() {
         wss.broadcast(`current visitors: ${numClients}`);
@@ -39,7 +43,7 @@ wss.on('connection', function connection(ws)  {
     
     });
 
-
+});
 
 
 
