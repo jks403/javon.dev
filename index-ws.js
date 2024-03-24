@@ -27,12 +27,21 @@ wss.on('connection', function connection(ws)  {
     if(ws.readyState ===ws.OPEN) {
         ws.send('Welcome to my server');
     }
+
+    db.run(`INSERT INTO visitors(count, time ) 
+        VALUES(${numClients} datetime ('now'))
+        `);
+
     ws.on('close', function close() {
+        wss.broadcast(`current visitors: ${numClients}`);
         console.log('a client has disconnected');
+
+    
     });
 
 
-});
+
+
 
 
 wss.broadcast = function broadcast(data) {
@@ -49,7 +58,7 @@ process.on('SIGINT', () =>   {
         server.close(()   => {
                 shutdownDB();
 
-        });
+        })
 })
 
 
